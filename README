@@ -2,7 +2,7 @@ NAME
     Test::Mojibake - check your source for encoding misbehavior.
 
 VERSION
-    version 0.1
+    version 0.2
 
 SYNOPSIS
     Test::Mojibake lets you check for inconsistencies in
@@ -28,7 +28,7 @@ SYNOPSIS
 
         use Test::More;
 
-        eval { use Test::Mojibake; };
+        eval 'use Test::Mojibake';
         plan skip_all => 'Test::Mojibake required for source encoding testing' if $@;
 
         all_files_encoding_ok();
@@ -118,7 +118,9 @@ FUNCTIONS
 
     *   2 - 8-bit characters detected, validates as UTF-8.
 
-    Original code, in PHP:
+    Unicode::CheckUTF8 is highly recommended, however, it is optional and
+    this function will fallback to the Pure Perl implementation of the
+    following PHP code:
     <http://www.php.net/manual/en/function.utf8-encode.php#85293>
 
 OPERATION
@@ -144,6 +146,10 @@ OPERATION
     declaration, an error is reported. On the other way, non-UTF-8
     characters in UTF-8 mode are wrong, either.
 
+    If present, Unicode::CheckUTF8 module (XS wrapper) will be used to
+    validate UTF-8 strings, note that it is 30 times faster and a lot more
+    Unicode Consortium compliant than the built-in Pure Perl implementation!
+
     UTF-8 BOM (Byte Order Mark) is also detected as an error. While Perl is
     OK handling BOM, your OS probably isn't. Check out:
 
@@ -167,6 +173,8 @@ OPERATION
 
 SEE ALSO
     *   common::sense
+
+    *   Dist::Zilla::Plugin::MojibakeTests
 
     *   Test::Perl::Critic
 

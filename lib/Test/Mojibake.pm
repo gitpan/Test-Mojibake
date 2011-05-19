@@ -7,7 +7,7 @@ use strict;
 use utf8;
 use warnings 'all';
 
-our $VERSION = '0.1';
+our $VERSION = '0.2';
 
 use 5.008;
 use File::Spec;
@@ -27,6 +27,10 @@ our %ignore_dirs = (
 );
 
 my $Test = new Test::Builder;
+
+# Use a faster/safer XS alternative, if present
+eval 'use Unicode::CheckUTF8 qw(is_utf8)';  ## no critic
+our $use_xs = $@ ? 0 : 1;
 
 sub import {
     my $self = shift;
@@ -202,6 +206,15 @@ sub _detect_utf8 {
     use bytes;
 
     my $str     = shift;
+
+    if ($use_xs) {
+        if (is_utf8(${$str})) {
+            return (${$str} =~ m{[\x{80}-\x{ff}]}) ? 2 : 1
+        } else {
+            return 0;
+        }
+    }
+
     my $d       = 0;
     my $c       = 0;
     my $b       = 0;
@@ -259,7 +272,7 @@ Test::Mojibake - check your source for encoding misbehavior.
 
 =head1 VERSION
 
-version 0.1
+version 0.2
 
 =head1 SYNOPSIS
 
@@ -282,7 +295,7 @@ Module authors can include the following in a F<t/mojibake.t> file and have L<Te
 
     use Test::More;
 
-    eval { use Test::Mojibake; };
+    eval 'use Test::Mojibake';
     plan skip_all => 'Test::Mojibake required for source encoding testing' if $@;
 
     all_files_encoding_ok();
@@ -383,7 +396,7 @@ Return codes:
 
 =back
 
-Original code, in PHP: L<http://www.php.net/manual/en/function.utf8-encode.php#85293>
+L<Unicode::CheckUTF8> is highly recommended, however, it is optional and this function will fallback to the Pure Perl implementation of the following PHP code: L<http://www.php.net/manual/en/function.utf8-encode.php#85293>
 
 =encoding utf8
 
@@ -404,6 +417,8 @@ Similarly, POD encoding can be changed via:
 Correspondingly, C<no utf8>/C<=encoding latin1> put Perl back into ISO-8859-1 mode.
 
 Actually, L<Test::Mojibake> only cares about UTF-8, as it is roughly safe to be detected. So, when UTF-8 characters are detected without preceding declaration, an error is reported. On the other way, non-UTF-8 characters in UTF-8 mode are wrong, either.
+
+If present, L<Unicode::CheckUTF8> module (XS wrapper) will be used to validate UTF-8 strings, note that it is B<30 times faster> and a lot more Unicode Consortium compliant than the built-in Pure Perl implementation!
 
 UTF-8 BOM (Byte Order Mark) is also detected as an error. While Perl is OK handling BOM, your OS probably isn't. Check out:
 
@@ -427,6 +442,10 @@ If you are wondering why only whole-line comments are stripped, check the second
 =item *
 
 L<common::sense>
+
+=item *
+
+L<Dist::Zilla::Plugin::MojibakeTests>
 
 =item *
 

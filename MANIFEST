@@ -15,6 +15,7 @@ t/03-bad-pod.t
 t/03-good-pod.t
 t/04-bom.t
 t/05-encode.t
+t/06-pp-vs-xs.t
 t/ascii.pl
 t/ascii.pod
 t/author-critic.t
