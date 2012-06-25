@@ -2,11 +2,18 @@
 abstract: 'check your source for encoding misbehavior.'
 author:
   - 'Stanislaw Pusep <stas@sysd.org>'
-build_requires: {}
+build_requires:
+  Encode: 0
+  File::Find: 0
+  File::Temp: 0
+  Test::Builder::Tester: 0
+  Test::More: 0
+  common::sense: 0
+  open: 0
 configure_requires:
   ExtUtils::MakeMaker: 6.30
 dynamic_config: 0
-generated_by: 'Dist::Zilla version 4.200006, CPAN::Meta::Converter version 2.110930'
+generated_by: 'Dist::Zilla version 4.300020, CPAN::Meta::Converter version 2.120921'
 license: perl
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.4.html
@@ -15,7 +22,13 @@ name: Test-Mojibake
 requires:
   File::Spec: 0
   Test::Builder: 0
+  bytes: 0
+  perl: 5.008
+  strict: 0
+  utf8: 0
+  warnings: 0
 resources:
-  bugtracker: http://github.com/creaktive/Test-Mojibake/issues
+  bugtracker: https://github.com/creaktive/Test-Mojibake/issues
+  homepage: https://github.com/creaktive/Test-Mojibake
   repository: git://github.com/creaktive/Test-Mojibake.git
-version: 0.3
+version: 0.4

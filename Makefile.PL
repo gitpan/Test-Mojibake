@@ -2,30 +2,42 @@
 use strict;
 use warnings;
 
-
+use 5.008;
 
 use ExtUtils::MakeMaker 6.30;
 
 
 
 my %WriteMakefileArgs = (
-  'ABSTRACT' => 'check your source for encoding misbehavior.',
-  'AUTHOR' => 'Stanislaw Pusep <stas@sysd.org>',
-  'BUILD_REQUIRES' => {},
-  'CONFIGURE_REQUIRES' => {
-    'ExtUtils::MakeMaker' => '6.30'
+  "ABSTRACT" => "check your source for encoding misbehavior.",
+  "AUTHOR" => "Stanislaw Pusep <stas\@sysd.org>",
+  "BUILD_REQUIRES" => {
+    "Encode" => 0,
+    "File::Find" => 0,
+    "File::Temp" => 0,
+    "Test::Builder::Tester" => 0,
+    "Test::More" => 0,
+    "common::sense" => 0,
+    "open" => 0
   },
-  'DISTNAME' => 'Test-Mojibake',
-  'EXE_FILES' => [],
-  'LICENSE' => 'perl',
-  'NAME' => 'Test::Mojibake',
-  'PREREQ_PM' => {
-    'File::Spec' => '0',
-    'Test::Builder' => '0'
+  "CONFIGURE_REQUIRES" => {
+    "ExtUtils::MakeMaker" => "6.30"
   },
-  'VERSION' => '0.3',
-  'test' => {
-    'TESTS' => 't/*.t'
+  "DISTNAME" => "Test-Mojibake",
+  "EXE_FILES" => [],
+  "LICENSE" => "perl",
+  "NAME" => "Test::Mojibake",
+  "PREREQ_PM" => {
+    "File::Spec" => 0,
+    "Test::Builder" => 0,
+    "bytes" => 0,
+    "strict" => 0,
+    "utf8" => 0,
+    "warnings" => 0
+  },
+  "VERSION" => "0.4",
+  "test" => {
+    "TESTS" => "t/*.t"
   }
 );
 

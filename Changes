@@ -1,10 +1,38 @@
-Changelog for Test::Mojibake
+Changelog for Test-Mojibake
 
-0.3     2011-05-23
- * better tests
+0.4 2012-06-25T19:36:57
+ [Stanislaw Pusep <stanislav.poussep@buscapecompany.com>]
+ - version bump
 
-0.2     2011-05-19
- * added optional Unicode::CheckUTF8 support
+ - _detect_utf8: PP version now handles overlong UTF-8 sequences
 
-0.1     2011-05-17
- * first release
+ - tests update (96% coverage)
+
+ - Dist::Zilla update
+
+
+v0.3 2011-05-23T13:49:05
+ [Stanislaw Pusep <stas@jacotei.com.br>]
+ - Better tests.
+
+ - Fixed 05-encode.t due to CPAN Testers reports.
+
+
+v0.2 2011-05-19T13:41:01
+ [Stanislaw Pusep <stas@jacotei.com.br>]
+ - Added optional Unicode::CheckUTF8 support.
+
+ - eval{} EPIC FAIL!
+
+ - POD.
+
+
+v0.1 2011-05-17T17:52:13
+ [Stanislaw Pusep <stas@jacotei.com.br>]
+ - Documentation, tests[2].
+
+ - Documentation, tests.
+
+ - 0.1
+
+
