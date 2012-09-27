@@ -2,7 +2,7 @@ NAME
     Test::Mojibake - check your source for encoding misbehavior.
 
 VERSION
-    version 0.4
+    version 0.5
 
 SYNOPSIS
         # Test::Mojibake lets you check for inconsistencies in source/documentation encoding, and report its results in standard Test::Simple fashion.

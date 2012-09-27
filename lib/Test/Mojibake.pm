@@ -6,7 +6,7 @@ use strict;
 use utf8;
 use warnings 'all';
 
-our $VERSION = '0.4'; # VERSION
+our $VERSION = '0.5'; # VERSION
 
 use File::Spec;
 use Test::Builder;
@@ -136,7 +136,7 @@ sub file_encoding_ok {
 
 sub all_files_encoding_ok {
     my @args = @_ ? @_ : _starting_points();
-    my @files = map { -d $_ ? all_files($_) : $_ } @args;
+    my @files = map { -d $_ ? all_files($_) : (-f $_ ? $_ : ()) } @args;
 
     $Test->plan(tests => scalar @files);
 
@@ -267,6 +267,7 @@ sub _detect_utf8 {
 1;
 
 __END__
+
 =pod
 
 =encoding utf8
@@ -277,7 +278,7 @@ Test::Mojibake - check your source for encoding misbehavior.
 
 =head1 VERSION
 
-version 0.4
+version 0.5
 
 =head1 SYNOPSIS
 
@@ -495,4 +496,3 @@ This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
 
 =cut
-

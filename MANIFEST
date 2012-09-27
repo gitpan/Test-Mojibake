@@ -22,11 +22,11 @@ t/06-pp-vs-xs.t
 t/07-broken-utf8.t
 t/author-critic.t
 t/author-test-eol.t
-t/bad/bad-latin1.pl
-t/bad/bad-latin1.pod
-t/bad/bad-utf8.pl
-t/bad/bad-utf8.pod
-t/bad/bom.pl
+t/bad/bad-latin1.pl_
+t/bad/bad-latin1.pod_
+t/bad/bad-utf8.pl_
+t/bad/bad-utf8.pod_
+t/bad/bom.pl_
 t/good/README
 t/good/ascii.pl
 t/good/ascii.pod
@@ -40,7 +40,6 @@ t/good/utf8.pod
 t/release-cpan-changes.t
 t/release-dist-manifest.t
 t/release-distmeta.t
-t/release-kwalitee.t
 t/release-minimum-version.t
 t/release-mojibake.t
 t/release-no-tabs.t

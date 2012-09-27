@@ -1,6 +1,13 @@
 Changelog for Test-Mojibake
 
-0.4 2012-06-25T19:36:57
+0.5 2012-09-27T12:22:46
+ [Stanislaw Pusep <creaktive@gmail.com>]
+ - Attempt to fix https://github.com/creaktive/Test-Mojibake/issues/2
+
+ - Kwalitee won't complain any more
+
+
+v0.4 2012-06-25T19:24:34
  [Stanislaw Pusep <stanislav.poussep@buscapecompany.com>]
  - version bump
 
