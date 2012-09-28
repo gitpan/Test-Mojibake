@@ -6,7 +6,7 @@ use strict;
 use utf8;
 use warnings 'all';
 
-our $VERSION = '0.5'; # VERSION
+our $VERSION = '0.6'; # VERSION
 
 use File::Spec;
 use Test::Builder;
@@ -278,7 +278,7 @@ Test::Mojibake - check your source for encoding misbehavior.
 
 =head1 VERSION
 
-version 0.5
+version 0.6
 
 =head1 SYNOPSIS
 

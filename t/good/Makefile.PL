@@ -13,7 +13,6 @@ my %WriteMakefileArgs = (
   "AUTHOR" => "Stanislaw Pusep <stas\@sysd.org>",
   "BUILD_REQUIRES" => {
     "Encode" => 0,
-    "ExtUtils::MakeMaker" => "6.30",
     "File::Find" => 0,
     "File::Temp" => 0,
     "Test::Builder::Tester" => 0,

@@ -1,6 +1,11 @@
 Changelog for Test-Mojibake
 
-0.5 2012-09-27T12:22:46
+0.6 2012-09-28T21:54:00
+ [Stanislaw Pusep <stanislav.poussep@buscapecompany.com>]
+ - fixed incorrect test examples (shame on me!)
+
+
+v0.5 2012-09-27T12:17:20
  [Stanislaw Pusep <creaktive@gmail.com>]
  - Attempt to fix https://github.com/creaktive/Test-Mojibake/issues/2
 

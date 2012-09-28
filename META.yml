@@ -4,12 +4,14 @@ author:
   - 'Stanislaw Pusep <stas@sysd.org>'
 build_requires:
   Encode: 0
+  ExtUtils::MakeMaker: 6.30
   File::Find: 0
   File::Temp: 0
   Test::Builder::Tester: 0
   Test::More: 0
   common::sense: 0
   open: 0
+  perl: 5.008
 configure_requires:
   ExtUtils::MakeMaker: 6.30
 dynamic_config: 0
@@ -31,4 +33,4 @@ resources:
   bugtracker: https://github.com/creaktive/Test-Mojibake/issues
   homepage: https://github.com/creaktive/Test-Mojibake
   repository: git://github.com/creaktive/Test-Mojibake.git
-version: 0.5
+version: 0.6
