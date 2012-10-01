@@ -6,7 +6,7 @@ use strict;
 use utf8;
 use warnings 'all';
 
-our $VERSION = '0.6'; # VERSION
+our $VERSION = '0.7'; # VERSION
 
 use File::Spec;
 use Test::Builder;
@@ -65,6 +65,7 @@ sub file_encoding_ok {
     my $pod         = 0;
     my $pod_utf8    = 0;
     my $n           = 1;
+    my %pod         = ();
     while (my $line = <$fh>) {
         if (($n == 1) && $line =~ /^\x{EF}\x{BB}\x{BF}/) {
             $Test->ok(0, $name);
@@ -75,6 +76,16 @@ sub file_encoding_ok {
         } elsif ($line =~ /^=+encoding\s+([\w\-]+)/) {
             my $pod_encoding = lc $1;
             $pod_encoding =~ y/-//d;
+
+            # perlpod states:
+            # =encoding affects the whole document, and must occur only once.
+            ++$pod{$pod_encoding};
+            if (1 < scalar keys %pod) {
+                $Test->ok(0, $name);
+                $Test->diag("POD =encoding redeclared in $file, line $n");
+                return;
+            }
+
             $pod_utf8 = ($pod_encoding eq 'utf8') ? 1 : 0;
             $pod = 1;
         } elsif ($line =~ /^=+\w+/) {
@@ -83,8 +94,8 @@ sub file_encoding_ok {
             # source
             $line =~ s/^\s*#.*$//s;     # disclaimers placed in headers frequently contain UTF-8 *before* it's usage is declared.
             foreach (split m{;}, $line) {
-                s/^\s+//s;
-                s/\s+$//s;
+                # trim
+                s/^\s+|\s+$//gs;
 
                 my @type = qw(0 0 0);
                 ++$type[_detect_utf8(\$_)];
@@ -278,7 +289,7 @@ Test::Mojibake - check your source for encoding misbehavior.
 
 =head1 VERSION
 
-version 0.6
+version 0.7
 
 =head1 SYNOPSIS
 

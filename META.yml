@@ -33,4 +33,4 @@ resources:
   bugtracker: https://github.com/creaktive/Test-Mojibake/issues
   homepage: https://github.com/creaktive/Test-Mojibake
   repository: git://github.com/creaktive/Test-Mojibake.git
-version: 0.6
+version: 0.7

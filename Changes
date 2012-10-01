@@ -1,6 +1,11 @@
 Changelog for Test-Mojibake
 
-0.6 2012-09-28T21:54:00
+0.7 2012-10-01T14:05:23
+ [Stanislaw Pusep <stanislav.poussep@buscapecompany.com>]
+ - fixed multiple =encoding behavior; more deterministic t/01-bad-check.t
+
+
+v0.6 2012-09-28T21:53:42
  [Stanislaw Pusep <stanislav.poussep@buscapecompany.com>]
  - fixed incorrect test examples (shame on me!)
 
@@ -28,23 +33,5 @@ v0.3 2011-05-23T13:49:05
  - Better tests.
 
  - Fixed 05-encode.t due to CPAN Testers reports.
-
-
-v0.2 2011-05-19T13:41:01
- [Stanislaw Pusep <stas@jacotei.com.br>]
- - Added optional Unicode::CheckUTF8 support.
-
- - eval{} EPIC FAIL!
-
- - POD.
-
-
-v0.1 2011-05-17T17:52:13
- [Stanislaw Pusep <stas@jacotei.com.br>]
- - Documentation, tests[2].
-
- - Documentation, tests.
-
- - 0.1
 
 

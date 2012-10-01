@@ -28,6 +28,7 @@ t/bad/bad-latin1.pod_
 t/bad/bad-utf8.pl_
 t/bad/bad-utf8.pod_
 t/bad/bom.pl_
+t/bad/mojibake.pod_
 t/good/Makefile.PL
 t/good/README
 t/good/ascii.pl
