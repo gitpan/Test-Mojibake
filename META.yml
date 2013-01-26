@@ -4,33 +4,32 @@ author:
   - 'Stanislaw Pusep <stas@sysd.org>'
 build_requires:
   Encode: 0
-  ExtUtils::MakeMaker: 6.30
   File::Find: 0
   File::Temp: 0
   Test::Builder::Tester: 0
   Test::More: 0
-  common::sense: 0
-  open: 0
-  perl: 5.008
 configure_requires:
   ExtUtils::MakeMaker: 6.30
 dynamic_config: 0
-generated_by: 'Dist::Zilla version 4.300024, CPAN::Meta::Converter version 2.120921'
+generated_by: 'Dist::Zilla version 4.300029, CPAN::Meta::Converter version 2.120921'
 license: perl
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.4.html
   version: 1.4
 name: Test-Mojibake
+recommends:
+  Unicode::CheckUTF8: 0
 requires:
-  File::Spec: 0
+  File::Spec::Functions: 0
+  Pod::Usage: 0
   Test::Builder: 0
   bytes: 0
-  perl: 5.008
+  integer: 0
+  perl: 5.006
   strict: 0
-  utf8: 0
   warnings: 0
 resources:
   bugtracker: https://github.com/creaktive/Test-Mojibake/issues
   homepage: https://github.com/creaktive/Test-Mojibake
   repository: git://github.com/creaktive/Test-Mojibake.git
-version: 0.7
+version: 0.8

@@ -1,6 +1,19 @@
 Changelog for Test-Mojibake
 
-0.7 2012-10-01T14:05:23
+0.8 2013-01-26T20:28:10
+ [Stanislaw Pusep <creaktive@gmail.com>]
+ - fixed cyclic t/ deps
+
+ - added the standalone scan_mojibake utility
+
+ - listed Unicode::CheckUTF8 as a recommended prerequisite
+
+ - recognize utf8::all
+
+ - passes perlcritic harsh
+
+
+v0.7 2012-10-01T14:04:58
  [Stanislaw Pusep <stanislav.poussep@buscapecompany.com>]
  - fixed multiple =encoding behavior; more deterministic t/01-bad-check.t
 
@@ -26,12 +39,5 @@ v0.4 2012-06-25T19:24:34
  - tests update (96% coverage)
 
  - Dist::Zilla update
-
-
-v0.3 2011-05-23T13:49:05
- [Stanislaw Pusep <stas@jacotei.com.br>]
- - Better tests.
-
- - Fixed 05-encode.t due to CPAN Testers reports.
 
 

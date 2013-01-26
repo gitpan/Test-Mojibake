@@ -2,7 +2,7 @@ NAME
     Test::Mojibake - check your source for encoding misbehavior.
 
 VERSION
-    version 0.7
+    version 0.8
 
 SYNOPSIS
         # Test::Mojibake lets you check for inconsistencies in source/documentation encoding, and report its results in standard Test::Simple fashion.
@@ -133,6 +133,10 @@ OPERATION
 
     or:
 
+     use utf8::all;
+
+    or even:
+
      use common::sense;
 
     Similarly, POD encoding can be changed via:
@@ -173,7 +177,11 @@ OPERATION
     the second line of the above example.
 
 SEE ALSO
+    *   scan_mojibake
+
     *   common::sense
+
+    *   utf8::all
 
     *   Dist::Zilla::Plugin::MojibakeTests
 
@@ -195,7 +203,7 @@ AUTHOR
     Stanislaw Pusep <stas@sysd.org>
 
 COPYRIGHT AND LICENSE
-    This software is copyright (c) 2012 by Stanislaw Pusep.
+    This software is copyright (c) 2013 by Stanislaw Pusep.
 
     This is free software; you can redistribute it and/or modify it under
     the same terms as the Perl 5 programming language system itself.
