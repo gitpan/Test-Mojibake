@@ -1,43 +1,28 @@
 Changelog for Test-Mojibake
 
-0.8 2013-01-26T20:28:10
- [Stanislaw Pusep <creaktive@gmail.com>]
- - fixed cyclic t/ deps
+v0.9 2014-01-17T15:21:52
+ - More consistent UTF-8 naming in docs[2] [Stanislaw Pusep]
+ - More consistent UTF-8 naming in docs [Stanislaw Pusep]
+ - Dist::Zilla maintenance [Stanislaw Pusep]
+ - Fixed issue #7 [Stanislaw Pusep]
 
- - added the standalone scan_mojibake utility
-
- - listed Unicode::CheckUTF8 as a recommended prerequisite
-
- - recognize utf8::all
-
- - passes perlcritic harsh
-
+v0.8 2013-01-26T20:27:16
+ - fixed cyclic t/ deps [Stanislaw Pusep]
+ - added the standalone scan_mojibake utility [Stanislaw Pusep]
+ - listed Unicode::CheckUTF8 as a recommended prerequisite [Stanislaw
+   Pusep]
+ - recognize utf8::all [Stanislaw Pusep]
+ - passes perlcritic harsh [Stanislaw Pusep]
 
 v0.7 2012-10-01T14:04:58
- [Stanislaw Pusep <stanislav.poussep@buscapecompany.com>]
  - fixed multiple =encoding behavior; more deterministic t/01-bad-check.t
-
+   [Stanislaw Pusep]
 
 v0.6 2012-09-28T21:53:42
- [Stanislaw Pusep <stanislav.poussep@buscapecompany.com>]
- - fixed incorrect test examples (shame on me!)
-
+ - fixed incorrect test examples (shame on me!) [Stanislaw Pusep]
 
 v0.5 2012-09-27T12:17:20
- [Stanislaw Pusep <creaktive@gmail.com>]
  - Attempt to fix https://github.com/creaktive/Test-Mojibake/issues/2
-
- - Kwalitee won't complain any more
-
-
-v0.4 2012-06-25T19:24:34
- [Stanislaw Pusep <stanislav.poussep@buscapecompany.com>]
- - version bump
-
- - _detect_utf8: PP version now handles overlong UTF-8 sequences
-
- - tests update (96% coverage)
-
- - Dist::Zilla update
-
+   [Stanislaw Pusep]
+ - Kwalitee won't complain any more [Stanislaw Pusep]
 

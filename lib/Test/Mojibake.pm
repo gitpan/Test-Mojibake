@@ -5,7 +5,7 @@ package Test::Mojibake;
 use strict;
 use warnings qw(all);
 
-our $VERSION = '0.8'; # VERSION
+our $VERSION = '0.9'; # VERSION
 
 use File::Spec::Functions;
 use Test::Builder;
@@ -298,7 +298,7 @@ __END__
 
 =pod
 
-=encoding utf8
+=encoding UTF-8
 
 =head1 NAME
 
@@ -306,7 +306,7 @@ Test::Mojibake - check your source for encoding misbehavior.
 
 =head1 VERSION
 
-version 0.8
+version 0.9
 
 =head1 SYNOPSIS
 
@@ -332,7 +332,7 @@ Always C<use utf8>/C<use common::sense> when saving source as UTF-8;
 
 =item *
 
-Always specify C<=encoding utf8> when saving POD as UTF-8;
+Always specify C<=encoding UTF-8> when saving POD as UTF-8;
 
 =item *
 
@@ -451,7 +451,7 @@ or even:
 
 Similarly, POD encoding can be changed via:
 
- =encoding utf8
+ =encoding UTF-8
 
 Correspondingly, C<no utf8>/C<=encoding latin1> put Perl back into ISO-8859-1 mode.
 
@@ -530,7 +530,7 @@ Stanislaw Pusep <stas@sysd.org>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2013 by Stanislaw Pusep.
+This software is copyright (c) 2014 by Stanislaw Pusep.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
