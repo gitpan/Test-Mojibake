@@ -5,7 +5,7 @@ package Test::Mojibake;
 use strict;
 use warnings qw(all);
 
-our $VERSION = '0.9'; # VERSION
+our $VERSION = '1.0'; # VERSION
 
 use File::Spec::Functions;
 use Test::Builder;
@@ -101,7 +101,7 @@ sub file_encoding_ok {
             $pod = 1;
         } elsif ($pod == 0) {
             # source
-            $line =~ s/^\s*#.*$//sx;    # disclaimers placed in headers frequently contain UTF-8 *before* it's usage is declared.
+            $line =~ s/^\s*\#.*$//sx;  # disclaimers placed in headers frequently contain UTF-8 *before* its usage is declared.
             foreach (split m{;}x, $line) {
                 # trim
                 s/^\s+|\s+$//gsx;
@@ -306,7 +306,7 @@ Test::Mojibake - check your source for encoding misbehavior.
 
 =head1 VERSION
 
-version 0.9
+version 1.0
 
 =head1 SYNOPSIS
 
@@ -534,5 +534,9 @@ This software is copyright (c) 2014 by Stanislaw Pusep.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
+
+=head1 CONTRIBUTOR
+
+Karen Etheridge <ether@cpan.org>
 
 =cut

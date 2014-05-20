@@ -6,7 +6,7 @@
 use strict;
 use warnings qw(all);
 
-our $VERSION = '0.9'; # VERSION
+our $VERSION = '1.0'; # VERSION
 
 use Pod::Usage;
 use Test::Mojibake;
@@ -30,7 +30,7 @@ scan_mojibake - scan Perl source and report bad character encoding
 
 =head1 VERSION
 
-version 0.9
+version 1.0
 
 =head1 SYNOPSIS
 
